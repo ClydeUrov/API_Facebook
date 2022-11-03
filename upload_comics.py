@@ -1,4 +1,5 @@
 import logging
+import argparse
 import os
 import random
 import time
@@ -8,7 +9,7 @@ import requests
 from dotenv import load_dotenv
 
 
-def main():
+def main(hours):
     load_dotenv()
 
     group = os.environ["GROUP_ID"]
@@ -30,7 +31,7 @@ def main():
                 graph.put_object(
                     group, "feed", message=message, link=image
                 )
-                time.sleep(86400)
+                time.sleep(hours * 60)
         except requests.ConnectionError:
             time.sleep(30)
         except Exception as err:
@@ -39,4 +40,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Выгружает комиксы в группу в Facebook."
+    )
+    parser.add_argument(
+        "-t",
+        dest="hours",
+        help="Частота выгрузки комиксов. [часы]",
+        default="24",
+        type=int,
+    )
+    main(parser.parse_args().hours)
