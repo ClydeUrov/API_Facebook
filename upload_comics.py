@@ -26,9 +26,9 @@ def main():
             f"https://xkcd.com/{comic_number}/info.0.json"
         )
         response.raise_for_status()
-        comic_book = response.json()
+        comic = response.json()
 
-        upload_to_facebook(comic_book["alt"], comic_book["img"])
+        upload_to_facebook(comic["alt"], comic["img"])
 
     except Exception:
         logging.exception(msg='Бот упал с ошибкой:')
