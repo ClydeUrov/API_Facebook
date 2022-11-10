@@ -1,4 +1,3 @@
-import logging
 import os
 import random
 
@@ -29,9 +28,8 @@ def main():
         comic = response.json()
 
         upload_to_facebook(comic["alt"], comic["img"])
-
-    except Exception:
-        logging.exception(msg='Бот упал с ошибкой:')
+    except facebook.GraphAPIError:
+        print("Введён неверный токен или номер группы.")
 
 
 if __name__ == "__main__":
