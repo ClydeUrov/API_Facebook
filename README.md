@@ -6,7 +6,7 @@
 Для начала необходимо создать группу на [Facebook](https://www.facebook.com/groups/feed/). Нажимаем на клавишу [Создать новую группу](https://www.facebook.com/groups/?category=create). После чего в URL будет ID группы, которое необходимо внести в файл `.env`.
 Пример:
 ```
-GROUP_ID="649448483222002"
+GROUP_ID="64944822002"
 ```
 ___
 Для получения FACEBOOK_TOKEN необходимо зайти на [Meta for Developers](https://developers.facebook.com/apps) 
@@ -28,7 +28,7 @@ ___
 Вносим его в файл `.env`.
 Пример:
 ```
-FACEBOOK_TOKEN="EAAJK5Q1AVZBoBAMnjS4se7dzwAkpvKlt299s7d4ogZC1LDooICCfi7gqElogY0VZBY4WNf0nIzfET"
+FACEBOOK_TOKEN="EAAJK5Q1AVZBoBAMnjS4se7dzwAkpvKlt299sZC1LDooICCfi7gqElogY0VZBY4ET"
 ```
 Python3 должен быть уже установлен. 
 Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
